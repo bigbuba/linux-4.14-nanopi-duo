@@ -212,7 +212,7 @@
 &cpu0 {
 	clocks = <&ccu CLK_CPUX>;
 	clock-names = "cpu";
-	clock-frequency = <1300000000>;
+	clock-frequency = <1296000000>;
 	operating-points-v2 = <&cpu_opp_table>;
 	#cooling-cells = <2>;
 	cpu-supply = <&reg_sy8113b>;
@@ -220,19 +220,19 @@
 };
 
 &cpu1 {
-	clock-frequency = <1300000000>;
+	clock-frequency = <1296000000>;
 	operating-points-v2 = <&cpu_opp_table>;
 	next-level-cache = <&A7_L2>;
 };
 
 &cpu2 {
-	clock-frequency = <1300000000>;
+	clock-frequency = <1296000000>;
         operating-points-v2 = <&cpu_opp_table>;
 	next-level-cache = <&A7_L2>;
 };
 
 &cpu3 {
-	clock-frequency = <1300000000>;
+	clock-frequency = <1296000000>;
         operating-points-v2 = <&cpu_opp_table>;
 	next-level-cache = <&A7_L2>;
 };
