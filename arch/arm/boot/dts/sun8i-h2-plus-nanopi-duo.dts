@@ -56,8 +56,15 @@
 	compatible = "friendlyarm,nanopi-duo", "allwinner,sun8i-h3";
 
 	aliases {
+		ethernet0 = &emac;
 		ethernet1 = &xr819;
 		serial0 = &uart0;
+		serial2 = &uart2;
+		serial3 = &uart3;
+		i2c0 = &i2c0;
+		spi0 = &spi0;
+		mmc0 = &mmc0;
+		mmc1 = &mmc1;
 	};
 
 	chosen {
@@ -102,7 +109,7 @@
 		regulator-name = "vcc-wifi";
 		gpio = <&r_pio 0 7 GPIO_ACTIVE_HIGH>;	// PL7 WIFI_POWER_EN
 	        startup-delay-us = <70000>;
-        	enable-active-high;
+		enable-active-high;
 	};
 
 	reg_sy8113b: gpio-regulator {
@@ -113,9 +120,9 @@
 		regulator-always-on;
 		regulator-min-microvolt = <1100000>;
 		regulator-max-microvolt = <1300000>;
-		regulator-ramp-delay = <50>; 		// 50=4ms check
+		regulator-ramp-delay = <50>;		// 50=4ms check
 
-		gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; 	// PL6 check
+		gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>;	// PL6 check
 		enable-active-high;
 		gpios-states = <0x1>;
 		states = <1100000 0x0
