@@ -434,7 +434,7 @@ static void update_temperature(struct thermal_zone_device *tz)
 	ret = thermal_zone_get_temp(tz, &temp);
 	if (ret) {
 		if (ret != -EAGAIN)
-			dev_warn(&tz->device,
+			dev_info(&tz->device,
 				 "failed to read out thermal zone (%d)\n",
 				 ret);
 		return;
@@ -854,6 +854,7 @@ static inline
 void print_bind_err_msg(struct thermal_zone_device *tz,
 			struct thermal_cooling_device *cdev, int ret)
 {
+	if (ret != -EEXIST)
 	dev_err(&tz->device, "binding zone %s with cdev %s failed:%d\n",
 		tz->type, cdev->type, ret);
 }
