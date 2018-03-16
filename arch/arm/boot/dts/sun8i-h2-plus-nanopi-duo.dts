@@ -279,6 +279,10 @@
 	bias-pull-up;
 };
 
+&hwspinlock {
+	status = "okay";
+};
+
 &pio {
 	leds_npi: led_pins@0 {
 		pins = "PA10";
