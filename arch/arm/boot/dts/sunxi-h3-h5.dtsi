@@ -91,6 +91,13 @@
 			reg = <0x01c00000 0x1000>;
 		};
 
+		hwprnd: hwprnd@0 {
+			compatible = "crypto-api-prng";
+			cra_driver_name="sun8i_ce_rng";
+			status = "disabled";
+		};
+
+
 		dma: dma-controller@01c02000 {
 			compatible = "allwinner,sun8i-h3-dma";
 			reg = <0x01c02000 0x1000>;
